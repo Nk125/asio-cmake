@@ -24,14 +24,10 @@ target_include_directories(asio
   INTERFACE "${asioftch_SOURCE_DIR}/asio/include"
 )
 
-target_sources(asio INTERFACE
-  "${asioftch_SOURCE_DIR}/asio/src/asio.cpp"
-  "${asioftch_SOURCE_DIR}/asio/src/asio_ssl.cpp"
-)
-
 target_compile_definitions(asio
   INTERFACE
     ASIO_STANDALONE
+    ASIO_HEADER_ONLY
     ASIO_NO_DEPRECATED
 )
 
