@@ -24,7 +24,7 @@ target_include_directories(asio
   INTERFACE "${asioftch_SOURCE_DIR}/asio/include"
 )
 
-target_sources(asio
+target_sources(asio INTERFACE
   "${asioftch_SOURCE_DIR}/asio/src/asio.cpp"
   "${asioftch_SOURCE_DIR}/asio/src/asio_ssl.cpp"
 )
@@ -48,4 +48,6 @@ endif()
 
 find_package(Threads REQUIRED)
 
-target_link_libraries(asio Threads::Threads)
+target_link_libraries(asio INTERFACE Threads::Threads)
+
+add_library(asio::asio INTERFACE asio)
