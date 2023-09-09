@@ -50,4 +50,4 @@ find_package(Threads REQUIRED)
 
 target_link_libraries(asio INTERFACE Threads::Threads)
 
-add_library(asio::asio INTERFACE asio)
+add_library(asio::asio ALIAS asio)
